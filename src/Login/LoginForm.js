@@ -1,16 +1,23 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const LoginForm = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [passwordVisible, setPasswordVisible] = useState(false);
-
+    const nav =useNavigate();
+    const [message, setMessage] = useState("");
+    const [errors, setErrors] = useState({});
+    const [isAdminExists, setIsAdminExists] = useState(false)
+    
+    
     const addData = (e) => {
         e.preventDefault();
         console.log (name);
         console.log(password);
     }
+
 
     return (
         <>
@@ -51,14 +58,15 @@ export const LoginForm = () => {
                         </span>
                     </div>
                     <button type="submit" className="btn btn-success w-100 mt-4">Submit</button>
-                    <p className="text-center mt-3">
-                        <a href="javascript:void(0)" className="text-decoration-none">
+                    <div className="mt-3 d-flex ">
+                        <p>
                            Dont't have an account?
-                        </a>
-                        <a href="/signup" className="ms-4">
+                        </p>
+                       <Link className="ms-3" to="/">
                             Signup
-                        </a>
-                    </p>
+                            </Link>
+                       
+                    </div>
                 </form>
             </div>
         </>

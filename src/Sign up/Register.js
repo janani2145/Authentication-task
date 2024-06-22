@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useState } from 'react';
+import { useNavigate,Link } from 'react-router-dom';
 
 export const Register = () => {
     const [name, setName] = useState("");
@@ -11,17 +12,17 @@ export const Register = () => {
     const [role, setRole] = useState("");
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [cpasswordVisible, setCpasswordVisible] = useState(false);
-
+const nav= useNavigate()
     const addData = (e) => {
         e.preventDefault();
-        // Handle form submission
+      
     }
 
     return (
         <>
-            <div className="container p-5 text-dark d-flex justify-content-center">
+            <div className="container p-4  mt-3 text-dark d-flex justify-content-center">
                 <form onSubmit={addData} className='form ps-5 pe-5 pb-2 rounded-5 shadow w-50'>
-                    <h1 className='text-center pt-3'>Sign Up</h1>
+                    <h1 className='text-center pt-3'>Get Started!</h1>
                     <div className="form-group mt-4 position-relative">
                         <i className="bi bi-person position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                         <input
@@ -105,14 +106,15 @@ export const Register = () => {
                         </select>
                     </div>
                     <button type="submit" className="btn btn-success w-100 mt-4">Create Account</button>
-                    <p className="text-center mt-3">
-                        <a href="javascript:void(0)" className="text-decoration-none">
-                            Already have an account?
-                        </a>
-                        <a href="/signup" className="ms-4">
+                    <div className=" mt-3 d-flex justify-content-center">
+
+                            <p>Already have an account?</p>
+                       
+                        < Link className="ms-4" to="/login">
                             SignIn
-                        </a>
-                    </p>
+                            </Link>
+                        
+                    </div>
                 </form>
             </div>
         </>
