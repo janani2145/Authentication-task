@@ -28,10 +28,11 @@ export const Home = () => {
           </div>
         </div>
       </nav>
-      <div  className="mt-5 container pt-5">
-        <h1 className="text-center mt-5 pt-5">Welcome to this page 😊</h1>
-        <p className="text-center">We're glad to see you here! 😃</p>
+      <div  className="mt-5 container ">
+        <h1 className="text-center">Welcome to this page 😊</h1>
+        
       </div>
+
     </>
   );
 };
